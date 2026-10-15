@@ -1,0 +1,15 @@
+.venv
+.env*
+.auth-secret
+*.db
+*.db-*
+backups
+exports
+migration-reports
+test_*.py
+test_support.py
+__pycache__
+.pytest_cache
+.pytest-temp
+.pytest*
+*.pyc

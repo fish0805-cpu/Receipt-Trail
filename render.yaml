@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: receipt-trail-api
+    runtime: docker
+    plan: free
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: RECEIPT_TRAIL_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: RECEIPT_TRAIL_AUTH_SECRET
+        sync: false
+      - key: RECEIPT_TRAIL_PRIZE_ADMIN_KEY
+        sync: false

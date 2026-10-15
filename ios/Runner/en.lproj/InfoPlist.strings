@@ -1,0 +1,2 @@
+"NSCameraUsageDescription" = "Receipt Trail uses the camera to scan electronic invoice QR codes.";
+"NSPhotoLibraryUsageDescription" = "Receipt Trail uses your photo library to recognize saved invoice QR codes.";

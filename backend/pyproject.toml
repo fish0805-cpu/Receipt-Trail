@@ -1,0 +1,25 @@
+[project]
+name = "receipt-trail-api"
+version = "0.1.0"
+description = "FastAPI backend for Receipt Trail"
+requires-python = "==3.12.*"
+dependencies = [
+    "alembic>=1.16,<2",
+    "fastapi==0.119.1",
+    "httpx==0.28.1",
+    "psycopg[binary]>=3.2,<4",
+    "pwdlib[argon2]==0.3.0",
+    "pyjwt==2.10.1",
+    "sqlalchemy>=2.0,<3",
+    "uvicorn[standard]==0.37.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==8.4.2",
+]
+
+[tool.pytest.ini_options]
+markers = [
+    "postgres: requires an isolated PostgreSQL database in TEST_POSTGRES_URL",
+]

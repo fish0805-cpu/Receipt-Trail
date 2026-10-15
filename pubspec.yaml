@@ -1,0 +1,53 @@
+name: receipt_trail
+description: A location-aware receipt journal built with Flutter.
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  archive: ^4.5.2
+  drift: ^2.35.2
+  drift_flutter: ^0.3.1
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_map: ^8.3.2
+  flutter_map_vector_tiles: ^2.9.1
+  flutter_secure_storage: ^11.2.0
+  geocoding: ^5.0.0
+  google_mlkit_text_recognition: ^0.17.1
+  http: ^1.6.0
+  image_picker: ^1.2.4
+  intl: any
+  latlong2: ^0.10.1
+  mobile_scanner: ^7.4.2
+  path_provider: ^2.1.6
+  shared_preferences: ^2.5.6
+  share_plus: ^13.3.1
+  url_launcher: ^6.3.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.4
+  drift_dev: ^2.35.1
+  build_runner: ^2.16.2
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/images/receipt_trail_app_icon.png
+  adaptive_icon_background: "#0E4D3D"
+  adaptive_icon_foreground: assets/images/receipt_trail_app_icon_foreground.png
+  adaptive_icon_foreground_inset: 16
+  remove_alpha_ios: true
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/styles/receipt_trail_map.json

@@ -1,0 +1,8 @@
+.venv*/
+.uv-cache/
+__pycache__/
+.pytest_cache/
+.pytest*/
+*.py[cod]
+.auth-secret
+receipt_trail.db

@@ -1,0 +1,123 @@
+{
+  "version": 8,
+  "name": "Receipt Trail Clean",
+  "glyphs": "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
+  "sources": {
+    "openmaptiles": {
+      "type": "vector",
+      "url": "https://tiles.openfreemap.org/planet"
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {"background-color": "#eef2ed"}
+    },
+    {
+      "id": "landcover",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "paint": {"fill-color": "#dcebdd", "fill-opacity": 0.72}
+    },
+    {
+      "id": "landuse",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "paint": {"fill-color": "#e5eee4", "fill-opacity": 0.64}
+    },
+    {
+      "id": "parks",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "paint": {"fill-color": "#cfe6d2", "fill-opacity": 0.9}
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "paint": {"fill-color": "#c8e4e7"}
+    },
+    {
+      "id": "waterways",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "waterway",
+      "paint": {"line-color": "#b5d9dd", "line-width": 2}
+    },
+    {
+      "id": "buildings",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "building",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#d8ddd7",
+        "fill-outline-color": "#c8cec7",
+        "fill-opacity": 0.9
+      }
+    },
+    {
+      "id": "roads-casing",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "paint": {
+        "line-color": "#cfd5cf",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 1, 12, 3, 17, 9]
+      }
+    },
+    {
+      "id": "roads",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 0.6, 12, 2, 17, 7]
+      }
+    },
+    {
+      "id": "shop-names",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["has", "name"],
+        ["match", ["geometry-type"], ["MultiPoint", "Point"], true, false],
+        [
+          "match",
+          ["get", "class"],
+          ["shop", "grocery", "fast_food", "clothing_store", "bar"],
+          true,
+          false
+        ]
+      ],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          ["get", "name:zh"],
+          ["get", "name:nonlatin"],
+          ["get", "name"]
+        ],
+        "text-font": ["Noto Sans Regular"],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 15, 10, 18, 13],
+        "text-max-width": 8,
+        "text-variable-anchor": ["top", "bottom", "left", "right"],
+        "text-radial-offset": 0.55
+      },
+      "paint": {
+        "text-color": "#326a57",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1.4,
+        "text-halo-blur": 0.3
+      }
+    }
+  ]
+}

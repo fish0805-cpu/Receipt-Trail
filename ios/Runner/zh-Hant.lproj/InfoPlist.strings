@@ -1,0 +1,2 @@
+"NSCameraUsageDescription" = "Receipt Trail 需要相機權限來掃描電子發票 QR Code。";
+"NSPhotoLibraryUsageDescription" = "Receipt Trail 需要相簿權限來辨識已儲存的發票 QR Code。";
